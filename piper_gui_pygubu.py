@@ -26,8 +26,6 @@ class config():
             print('Caught this error: ' + repr(e))
             messagebox.showinfo("error", "failed to load piper_gui_config.toml, cf stderr in console")
             exit(-1)
-cfg:config=config()
-            
 
 class pipersay():
     #gère les interactions avec piper
@@ -38,7 +36,7 @@ class pipersay():
         except ValueError:
             return ""
         return f"""piper \
-  --model {cfg.cfg["model"]} \
+  --model {app.cfg.cfg["model"]} \
   --length-scale {vitesse} {debug} \
   --output-raw"""
     
@@ -52,7 +50,7 @@ class pipersay():
             app.set_bar("text is empty")
             return
         piper_command:str= f"""piper \
-  --model {cfg.cfg["model"]} \
+  --model {app.cfg.cfg["model"]} \
   --length-scale {vitesse} {debug} \
   --output_file {str(out_file_path)}"""
         if app.check_comma.instate(['selected']):
@@ -92,20 +90,22 @@ class pipersay():
             app.set_bar("time out!")
 
 class piper_gui_pygubu_class(piper_gui_pygubu_classUI):
-    __slots__=("texte","pipersay","label_text","entry_speed","entry_path","entry_filename","master")
+    __slots__=("texte","pipersay","label_text","entry_speed","entry_path","entry_filename","master","cfg")
     def __init__(self, master=None):
         super().__init__(master)
         self.master=master
+        self.cfg:config=config()
         self.texte = self.builder.get_object("texte", master) #objet champ de texte
         self.pipersay=pipersay() #instantiation de la classe pipersay
         self.label_text=self.builder.get_object("statusbar", master)
         self.entry_speed=self.builder.get_object("entry_speed", master)
-        self.entry_speed.insert(0,cfg.cfg["speed"])
+        self.entry_speed.insert(0,self.cfg.cfg["speed"])
         self.check_comma=self.builder.get_object("check_comma", master)
         self.check_comma.state(['!alternate']) # sans ça la case est dans l'état alternate au lancement ni oui ni non
         self.entry_path=self.builder.get_object("entry_path", master)
-        self.entry_path.insert(0,cfg.cfg["path"])
+        self.entry_path.insert(0,self.cfg.cfg["path"])
         self.entry_filename=self.builder.get_object("entry_filename", master)
+        
     
     def get_speed(self)->str:
         speed:str=self.entry_speed.get()
