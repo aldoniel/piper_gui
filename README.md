@@ -23,7 +23,7 @@ This is a simple script I created for my own usage:
 # installation
 * get linux and python (min. 3.10) (until now, I thought that piper was linux only, so I wrote with linux support only in mind. You can make a pull request for windows if you want, or buy me an hardware upgrade for windows 10 to 11 and I will add support ;-) ).
 * install [piper](https://github.com/rhasspy/piper) with piper in path.
-   * Personally, I used [pipx](https://pipx.pypa.io/latest/) for that. Firt install it then run `pip install piper-tts`. It will install it in a venv which is cleaner, and mandatory if pip is managed.
+   * Personally, I used [pipx](https://pipx.pypa.io/latest/) for that. First install it then run `pip install piper-tts`. It will install it in a venv which is cleaner, and mandatory if pip is managed.
    * download voices for piper. You can run piper example command for that in a directory where you have write access. Change `en_US-lessac-medium` by the voice you want [see list here](https://huggingface.co/rhasspy/piper-voices/tree/v1.0.0)
 ```
 echo 'Welcome to the world of speech synthesis!' | piper \
