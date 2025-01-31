@@ -1,0 +1,2 @@
+pygubu==0.36
+pyperclip==1.9.0

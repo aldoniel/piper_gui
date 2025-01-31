@@ -1,0 +1,177 @@
+<?xml version='1.0' encoding='utf-8'?>
+<interface version="1.4" author="PygubuDesigner 0.40">
+  <project>
+    <settings>
+      <setting id="name">piper_gui</setting>
+      <setting id="description">une gui pour piper</setting>
+      <setting id="module_name">piper_gui_pygubu</setting>
+      <setting id="template">application</setting>
+      <setting id="main_widget">toplevel1</setting>
+      <setting id="main_classname">piper_gui_pygubu_class</setting>
+      <setting id="main_menu" />
+      <setting id="output_dir" />
+      <setting id="output_dir2" />
+      <setting id="import_tkvariables">False</setting>
+      <setting id="use_ttk_styledefinition_file">False</setting>
+      <setting id="use_i18n">False</setting>
+      <setting id="all_ids_attributes">False</setting>
+      <setting id="generate_code_onsave">False</setting>
+      <setting id="use_window_centering_code">False</setting>
+      <setting id="ttk_style_definition_file" />
+    </settings>
+    <customwidgets />
+  </project>
+  <object class="tk.Toplevel" id="toplevel1">
+    <property name="height">200</property>
+    <property name="title" translatable="yes">piper GUI</property>
+    <property name="width">200</property>
+    <child>
+      <object class="ttk.Frame" id="frame1">
+        <property name="height">200</property>
+        <property name="width">200</property>
+        <layout manager="pack">
+          <property name="side">top</property>
+        </layout>
+        <child>
+          <object class="tk.Text" id="texte" named="True">
+            <property name="height">10</property>
+            <property name="width">50</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">0</property>
+              <property name="rowspan">4</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Checkbutton" id="check_comma" named="True">
+            <property name="text" translatable="yes">comma</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">5</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label1">
+            <property name="text" translatable="yes">speed</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">6</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="entry_speed" named="True">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="row">6</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="but_paste" named="True">
+            <property name="command" type="command" cbtype="simple">paste</property>
+            <property name="text" translatable="yes">paste</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">1</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="but_clear" named="True">
+            <property name="command" type="command" cbtype="simple">flush</property>
+            <property name="text" translatable="yes">clear</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">2</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="but_clipsay" named="True">
+            <property name="command" type="command" cbtype="with_wid">clipsay_method</property>
+            <property name="text" translatable="yes">clipsay</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">3</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="button1" named="True">
+            <property name="command" type="command" cbtype="simple">read</property>
+            <property name="text" translatable="yes">read</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="row">0</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="statusbar" named="True">
+            <property name="anchor">w</property>
+            <property name="borderwidth">1</property>
+            <property name="relief">sunken</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="columnspan">2</property>
+              <property name="row">10</property>
+              <property name="sticky">ew</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="entry_path" named="True">
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="row">7</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="but_export" named="True">
+            <property name="command" type="command" cbtype="simple">to_wav</property>
+            <property name="text" translatable="yes">-&gt; wav</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">7</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Button" id="button3" named="True">
+            <property name="command" type="command" cbtype="simple">batchwav</property>
+            <property name="text" translatable="yes">batch -&gt; wav</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">9</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Entry" id="entry_filename" named="True">
+            <property name="text" translatable="yes">out</property>
+            <layout manager="grid">
+              <property name="column">1</property>
+              <property name="padx">5</property>
+              <property name="row">8</property>
+            </layout>
+          </object>
+        </child>
+        <child>
+          <object class="ttk.Label" id="label2">
+            <property name="text" translatable="yes">output file root name</property>
+            <layout manager="grid">
+              <property name="column">0</property>
+              <property name="row">8</property>
+            </layout>
+          </object>
+        </child>
+      </object>
+    </child>
+  </object>
+</interface>

@@ -1,0 +1,4 @@
+# help :  https://toml.io/en/
+model = "/home/aldoniel/.local/pipx/venvs/piper-tts/lang/ru_RU-irina-medium.onnx"
+speed = 1.4
+path = "/zram/"
