@@ -12,7 +12,7 @@ from tkinter import messagebox
 
 """
 gui for piper
-v.250131
+v.2500222
 """
 
 class config():
@@ -195,9 +195,9 @@ class piper_gui_pygubu_class(piper_gui_pygubu_classUI):
             i:int=1
             with open(outpath,"w", encoding="utf8") as f:
                 for line in finput:
-                    stri:str=outbasename+str(i).zfill(nb_chiffres)
+                    stri:str=str(i).zfill(nb_chiffres)
                     line=line.strip()
-                    f.write (f"{line};{stri}.opus;{line}[sound:{stri}.opus]\n")
+                    f.write (f"{line};{outbasename}{stri}.opus;{line}[sound:{outbasename}{stri}.opus]\n")
                     i+=1
                     self.pipersay.piper_to_wav(texte=line,path=str(Path(Path_filename.parent))+ "/" ,filename=outbasename +stri+".wav",vitesse=vitesse)
                     self.set_bar(outbasename +stri+".wav")
