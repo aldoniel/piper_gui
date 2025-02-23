@@ -12,7 +12,7 @@ from tkinter import messagebox
 
 """
 gui for piper
-v.2500222
+v.250223
 """
 
 class config():
@@ -157,7 +157,7 @@ class piper_gui_pygubu_class(piper_gui_pygubu_classUI):
         # exporte en wav
         self.set_bar("starting piper")
         try:
-            self.pipersay.piper_to_wav(texte=self.texte.get('1.0', 'end'),path=self.entry_path.get(),filename=self.get_filename(),vitesse=self.get_speed())
+            self.pipersay.piper_to_wav(texte=self.texte.get('1.0', 'end'),path=self.entry_path.get(),filename=self.get_filename()+".wav",vitesse=self.get_speed())
         except ValueError as e:
             print('Caught this error: ' + repr(e))
             return
