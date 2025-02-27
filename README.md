@@ -31,15 +31,23 @@ echo 'Welcome to the world of speech synthesis!' | piper \
   --output_file welcome.wav
 ```
    * this will download two files. I recommand that you move them somewhere like `/home/your_user_name/.local/pipx/venvs/piper-tts/lang/`
-* create a venv and download the files from this repo inside the venv. I didn't do it from command line, but I think it's something like
-   * (from a directory in your home where you install scripts) `python -m venv piper_gui`
-   * `cd piper_gui`
-   * `source ./bin/activate`
-   * normaly `pip list` should list only itself.
-   * `pip install -r requirements.txt`
-   * modify piper_gui_config.toml : remplace `/home/your_user_name/.local/pipx/venvs/piper-tts/lang/ru_RU-irina-medium.onnx` by the voice you downloaded.
-   * `python piper_gui_pygubu.py` to run the GUI.
-   * `sudo chmod +x piper_gui.sh` if you want a one-clic bash file to run the gui next time.
+* option 1 using a venv
+  * create a venv and download the files from this repo inside the venv. I didn't do it from command line, but I think it's something like
+     * (from a directory in your home where you install scripts) `python -m venv piper_gui`
+     * `cd piper_gui`
+     * `source ./bin/activate`
+     * normaly `pip list` should list only itself.
+     * `pip install -r requirements.txt`
+     * modify piper_gui_config.toml : remplace `/home/your_user_name/.local/pipx/venvs/piper-tts/lang/ru_RU-irina-medium.onnx` by the voice you downloaded.
+     * `python piper_gui_pygubu.py` to run the GUI.
+     * `sudo chmod +x piper_gui.sh` if you want a one-clic bash file to run the gui next time.
+* option 2 as a python module
+  * dowload a release
+  * It's a python module with all dependencies inside, it won't pollute your system.
+  *  uncompress this archive somewhere in user land in a directory named piper_gui
+  *  modify piper_gui_config.toml as above
+  *  cd to parent directory (cd ..)
+  *  run this module with "python piper_gui/ "
 
 # Anki
 * this script will also generate a semicolon delimited csv file that you can edit to import into anki.
